@@ -237,8 +237,7 @@ spark.conf.set(
    .start()
 ```
 
-Refer to the below link for more details on streaming into Azure Synapse Analytics
-[Azure Synapse Analytics](https://docs.databricks.com/data/data-sources/azure/synapse-analytics.html)
+Refer to the below link for more details on streaming into [Azure Synapse Analytics](https://docs.databricks.com/data/data-sources/azure/synapse-analytics.html)
 
 
 
