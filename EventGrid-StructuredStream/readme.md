@@ -62,7 +62,7 @@ GO
 
 1.) Create a new Databricks instance and create a new cluster.  For the purposes of this sample, a standard cluster using DS3_v2 virtual machines with min 2 worker nodes and max 8 worker nodes will suffice. No additional libraries are required on the cluster. 
 
-2.) Create a new Scala Notebook called Generator. The Generator will generate random JSON files into the folderd
+2.) Create a new Scala Notebook called Generator. The Generator will generate random JSON files into the container called inbound-data.
 
 3.) Copy and paste your code into the notebook 
 
@@ -187,7 +187,7 @@ It is strongly recommended that you use service principals, Secrets, Azure Key V
 ```
 
 Create a new storage account that will host the checkpoint files. Create a new container called outputstreaming and a second container called temp for the tempdir location
-Mount the path if not already mounted
+Mount the storage if not already mounted
 
 ```
 val streaminglogcontainer = "outputstreaming"
@@ -237,6 +237,7 @@ spark.conf.set(
    .start()
 ```
 
+Refer to the below link for more details on streaming into Azure Synapse Analytics
 [Azure Synapse Analytics](https://docs.databricks.com/data/data-sources/azure/synapse-analytics.html)
 
 
