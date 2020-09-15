@@ -207,7 +207,7 @@ dbutils.fs.mount(
 Set the context of the base path and checkpoint file location
 
 ```
-val basePath ="/mnt/kvstreamingtestlog" 
+val basePath ="/mnt/<Storage Account Name>" 
 val outputDeltaDirPath=basePath+"/delta"
 val checkpointPath = basePath + "/checkpoint"       
 ```
@@ -228,7 +228,7 @@ spark.conf.set(
  stream
    .writeStream
    .option("url", "jdbc:sqlserver:/<database endpoint>:1433;database=<Database Name>;user=<User Name>;password=<Password> ;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;")
-   .option("tempDir", "wasbs://temp@<storage account>.blob.core.windows.net/tempdir")
+   .option("tempDir", "wasbs://temp@<storage account name>.blob.core.windows.net/tempdir")
    .option("forwardSparkAzureStorageCredentials", "true")
    .option("dbTable", "dbo.site_temperatures")
    .option("checkpointLocation", checkpointPath)
